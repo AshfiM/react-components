@@ -6,6 +6,7 @@ import Page3 from '/Users/ashfi/Desktop/react/react-components/src/pages/page3.j
 import Login from "../pages/login";
 import LayoutWithHeader from "./withheader";
 import LayoutWithoutHeader from "./withoutheader";
+import Signup from "../pages/signup";
 
 const RoutesLogic = () => {
     return (
@@ -19,6 +20,8 @@ const RoutesLogic = () => {
             
             <Route element={<LayoutWithoutHeader/>}>
                 <Route path="/" element={<Login/>}></Route>
+                <Route path="/signup" element={<Signup/>}></Route>
+
             </Route>
             
         </Routes>

@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import React, {useState}from "react";
 import { Link} from "react-router-dom";
 import styles from "/Users/ashfi/Desktop/react/react-components/src/pages/login.module.css"
 import Logo from "../assets//header1logo.jpg"
 
-const Login = () => {
+const Signup = () => {
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [ischecked, setischecked] = useState(false)
+    
 
-    const handleLogin = (e) => {
+    const handleSignup = (e) => {
         e.preventDefault();
-        console.log("email", email,"\npassword", password,"\nremeberme", ischecked)
-        alert("login")
+        console.log("email", email, "\npassword", password)
+        alert("signup")
     }
+
     return (
         <div>
+            
             <div className={styles.rform}>
-                
-                <form onSubmit={handleLogin} className={styles.loginform}>
-                    
+                <form onSubmit={handleSignup} className={styles.loginform}>
 
                     <div className={styles.usernamecontainer}>
                         <label>username</label>
@@ -31,36 +32,34 @@ const Login = () => {
                     </div>
 
                     <div className={styles.buttoncontainer}>
-                        <button type="submit">login</button>
+                        <button type="submit">signup</button>
                     </div>
                     <div className={styles.linkcontainer}>
 
-                        <label className={styles.checkbox}><input type="checkbox" value={ischecked} onChange={(e)=> {setischecked(e.target.checked)}}></input>Remeber me</label>
-                        <Link className={styles.rlink}>reset password</Link>
+                       
+                       
                     </div>
 
 
                 </form>
 
+
                 <div className={styles.signupcolumn}>
+
                 <div className={styles.logobox}>
                     <img src={Logo} alt="loginimage"></img>
                 </div>
                     
                     <div className={styles.signup}>
-                        <h1>welcome to login</h1>
-                        <h3>don't have an account</h3>
-                        <Link to="/signup" className={styles.slink}>signup</Link>
+                        <h1>welcome to signup</h1>
+                        <h3>have an account</h3>
+                        <Link to="/" className={styles.slink}>signin</Link>
                     </div>
                 </div>
 
-
-
-
             </div>
-
         </div>
     )
 }
 
-export default Login;
+export default Signup;
