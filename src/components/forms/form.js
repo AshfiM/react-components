@@ -7,7 +7,7 @@ const FormComp = () => {
     const [name, setName] = useState("");
     const [rate, setRate] = useState("10")
     const [comment, setComment] = useState("")
-
+    // input type = "file" is uncontrolled component because it is readonly 
     const handleSubmit = (e) => {
         e.preventDefault(); // default behavior is get request to the root and page refresh 
         setName(""); // clear the input box after form submission
@@ -60,7 +60,7 @@ const FormComp = () => {
                 </fieldset>
 
                 <fieldset>
-                    <h2>feedback form</h2>
+                    <legend>feedback form</legend>
                     <label htmlFor="rate">rate {rate}</label>
                     <input
                     id="rate"
