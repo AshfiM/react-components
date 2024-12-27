@@ -1,1 +1,25 @@
 API calls and backend interaction
+
+array destructuring, way to get an in individual item from an array of items and save those individual components
+as  separate components
+
+let veggies = [onion, carrot]
+
+const [v1, v2] = veggies;
+console.log(v1) // onion
+
+object destructuring, destructre using its exact property name as the destructured variable
+
+useState hook use an array for return value
+useState hook allows to work with state in components
+
+side effect, makes a function impure, pure functions don't have side effects, impure functions do.
+
+pure functions returns same output no matter how many times it invoked
+impure functions have some external functions; console.log(), fetch
+
+useEffect() hook used to handle impure actions, all impure actions should be inside a specific area
+useEffect() run after React updated the DOM
+if effect returns a function it will be executed when ever clean up needed
+when useEffect dependency array is empty useEffect run only once, if it is not given it will run as many times
+
