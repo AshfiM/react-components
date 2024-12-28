@@ -23,3 +23,16 @@ useEffect() run after React updated the DOM
 if effect returns a function it will be executed when ever clean up needed
 when useEffect dependency array is empty useEffect run only once, if it is not given it will run as many times
 
+hooks rule
+only call inside the react component functions
+only call hooks at the top level of the component, call outside the loops, conditions and before return statement
+call multiple state or effect hooks, hook calls outside the conditions
+make multiple hook calls in the same sequence
+
+fetch, make a server request to retrieve JSON data
+fetchAPI a set of functions for fetch
+
+single threaded execution, next step cannot be executed bfore the completion of current step
+fetch() is fazzard function, it seems to be part of javascript  but it is a way to call webAPI from javascript
+acces a browser functionality outside of javascript.
+
