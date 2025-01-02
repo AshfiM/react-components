@@ -20,7 +20,7 @@ impure functions have some external functions; console.log(), fetch
 
 useEffect() hook used to handle impure actions, all impure actions should be inside a specific area
 useEffect() run after React updated the DOM
-if effect returns a function it will be executed when ever clean up needed
+if effect returns a function it will be executed when ever clean up needed, when component unmount
 when useEffect dependency array is empty useEffect run only once, if it is not given it will run as many times
 
 hooks rule
@@ -36,3 +36,60 @@ single threaded execution, next step cannot be executed bfore the completion of 
 fetch() is fazzard function, it seems to be part of javascript  but it is a way to call webAPI from javascript
 acces a browser functionality outside of javascript.
 
+promise, an object returned by an asyncronous function which represnts the current state of an operation
+at the time promise returned to the caller operation isn't finished but promise object provide methods
+to handle the eventual success or failure of the operation
+
+async, make a function asyncronous, place it before the function
+
+const [state, dispatch] = useReducer(reducer, intial state), reducer function return the new state, 
+dispatch function takes action as the only argument,react send the state and action to reducer function
+reducer function write as switch statement
+useReducer is used when the state is complex and next state depends on previous state
+
+const ref = useRef(0), return an object with one property current, inital value can be anything it is igonred after first render
+changing ref property do trigger re-rendering, does not reset its value after re-render, information is 
+local 
+
+jsx, extension to javascript, react uses jsx to describe ui appearance
+each node in the component tree is a plain javascript object/element that describ the component instance or dom node
+an element is wat to describe final html output as plain output
+each element consists 2 prperties, type and props, type describe what kind of element like button points toward the component,
+props consists all objects the component receives.
+element tree converts to dom elements, virtual dom, a javascript alternative representation of the real dom
+ui changes, build a new element tree, compare it with previous tree, calculate difference in the tree 
+using diff operation, based on the difference it make minimal changes to the underlaying dom nodes to process 
+the updates
+
+componet composition, containment and specialization
+containment, fact that children are unknown ahead of time
+for dialog boxes, pass children prop directly as the content, it will become generic conponent that accept
+any valid jsx as children, containment feature
+specialization, the component is a speacial case for another component, ComfirmationDialog comp is special case
+comp of Dialog comp
+
+React Fragment tag or <></> emptytag grouping children without adding extra nodes
+
+React top level elements, used to manipulate and transform elements, 
+ways of importing elements from react package
+
+react.cloneElement effectively clone and return a new element of a provided element
+cloneElement(element, [props]),props that to be added to the clone comp,
+props are immutable ojects, using cloneElement operation performed on cloned element,
+cloneElement used to modify and add properties, extend children functionality,
+
+react.children provide utilities to work with props.children data structure
+
+spread operator [...object/array/string]
+copy, newvariable = {...originalvaraible}
+merge, newvariable = {...originalvaraible, modifyproperty:value}, should happen inorder
+
+cross-cutting-concerns,hoc, higher order component, a function that takes a component as argument return a new component
+const withSubscription = (WrappedComponent, selectData) => {
+    return (props) => {
+
+        return<WrappedComponent data={data} {...props}/>
+    }
+    
+}
+never mutate the hoc and pass unrelated props to the WrappedComponent

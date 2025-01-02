@@ -20,11 +20,11 @@ const CallAPI = (props) => {
     return(Object.keys(data).length > 0 ? (<div>
         call API
         <div>
-            {data.map((object) => {
+            {data.map((object, index) => {
                 const firstName = object.name.first
                 const lastName = object.name.last
                 const title = object.name.title
-                return (<div>
+                return (<div key={index}>
                     <h3>first name: {firstName}</h3>
                     <h3>last name: {lastName}</h3>
                     <h3>title: {title}</h3>
