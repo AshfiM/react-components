@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "./headercss.module.css"
 import { Link } from 'react-router-dom';
-import Logo from "/Users/ashfi/Desktop/react/react-components/src/assets/header1logo.jpg"
-import Background from "/Users/ashfi/Desktop/react/react-components/src/assets/header1background.jpg"
+import Logo from "../../assets/header1logo.jpg"
+import Background from "../../assets/header1background.jpg"
 
 const Header = () => {
     return (
