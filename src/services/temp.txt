@@ -84,12 +84,50 @@ spread operator [...object/array/string]
 copy, newvariable = {...originalvaraible}
 merge, newvariable = {...originalvaraible, modifyproperty:value}, should happen inorder
 
-cross-cutting-concerns,hoc, higher order component, a function that takes a component as argument return a new component
-const withSubscription = (WrappedComponent, selectData) => {
-    return (props) => {
+higher order component enahance a component by providing new props to it
+cross-cutting-concerns,hoc, higher order component, a function that takes a component 
+as argument return a new component
 
-        return<WrappedComponent data={data} {...props}/>
+const withSubscription = (WrappedComponent) => {
+    return (props) => {
+        return <WrappedComponent {...props}/>
     }
-    
+
 }
 never mutate the hoc and pass unrelated props to the WrappedComponent
+
+render props, take functions that return react elements, call them inside their render logic
+enhance original component without modifying original component
+way of injecting the new props is differs hoc,
+
+const Comp = ({render}) => {
+
+    const [data, setData] = useState({})
+
+    return render(data)
+}
+render props is a functions that return some jsx
+<Comp render = {(data) => <h1>data.property</h1>}
+
+Comp does not take care of any visualization logic, it encapsulate cross-cutting concerns
+return the result(data) of calling render function
+
+test, avoid including implimentation details, work with dom nodes, resemsble software usage
+jest and react testing library, tesing tools
+jest, javascript test runner that allow acces to artificial dom, js dom, approximation of how browser works
+features, mocking, ensure unit tesing standalone,
+react tesing library, set of utilities, test component with out knowing implimentation
+
+mock function, tracl a perticular function called by a external code
+
+ci, continous integration, working on long feedback loop is risky, introducing new changes is time consuming
+ci tool monitors the central code repository and prevents people from when and how to run the test
+new commit accepted, if the all automated test cases passed.
+
+continous interaction is a small part of continous delivery
+when new commit, a new app will be built and set of test cases will be run on that
+
+components are functions that take data or props as input return an element tree,
+elements are plain javascript objects, offers a light weight representation of the dom,
+cross-cutting concerns refers to the generic functionality that is not related to business logic
+handling errors, authentication, fetching

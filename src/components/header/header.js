@@ -22,8 +22,6 @@ const Header = () => {
                 <button className={styles.button}>signup</button>
 
             </div>
- 
-            
            
         </div>
     )

@@ -75,7 +75,7 @@ const FormComp = () => {
                    <textarea value={comment} onChange={e => setComment(e.target.value)}>
 
                    </textarea>
-                    <button onClick={submitFeedback}> submit feedback</button>
+                    <button onClick={submitFeedback} disabled={(Number(rate) < 5 && comment.length < 10)}>submit feedback</button>
                 </fieldset>
             </form>
              

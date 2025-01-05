@@ -8,6 +8,8 @@ import TextInput from "../components/textinput/textinput"
 import useConsole from "../hooks/useconsole"
 import RadioButtonGroup, { RadioButton } from "../components/radiobutton/radiobutton"
 import PointMouseTracker from "../components/hoc/hocmouseposition"
+import MousePointLogger from "../components/renderpops/renderprops"
+
 
 const Page1 = () => {
     const {user} = useUser();
@@ -31,6 +33,11 @@ const Page1 = () => {
                 </RadioButtonGroup>
                 
                 <PointMouseTracker/>
+
+                <div>
+                    cross-cutting concerns
+                    <MousePointLogger render={(data) => <h1>{data}</h1>}/>
+                </div>
                 
 
             </div>
