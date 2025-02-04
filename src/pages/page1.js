@@ -24,9 +24,6 @@ const Page1 = () => {
         <div className={styles.page1}>
             page 1
             <div >
-            
-                    
-                
                 <h2>{user.name}</h2>
                 <ListComp/>
                 <FormComp/>
@@ -42,6 +39,7 @@ const Page1 = () => {
                     cross-cutting concerns
                     <MousePointLogger render={(data) => <h1>{data}</h1>}/>
                 </div>
+        
                 
                 
 

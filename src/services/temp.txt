@@ -52,7 +52,7 @@ changing ref property do trigger re-rendering, does not reset its value after re
 local 
 
 jsx, extension to javascript, react uses jsx to describe ui appearance
-each node in the component tree is a plain javascript object/element that describ the component instance or dom node
+each node in the component tree is a plain javascript object/element that describe the component instance or dom node
 an element is wat to describe final html output as plain output
 each element consists 2 prperties, type and props, type describe what kind of element like button points toward the component,
 props consists all objects the component receives.

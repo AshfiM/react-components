@@ -21,7 +21,6 @@ const RoutesLogic = () => {
             <Route element={<LayoutWithoutHeader/>}>
                 <Route path="/" element={<Login/>}></Route>
                 <Route path="/signup" element={<Signup/>}></Route>
-
             </Route>
             
         </Routes>

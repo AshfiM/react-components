@@ -1,5 +1,6 @@
 .container {
     display: grid;
+    position: fixed;
     grid-template-columns: 18vw 60vw 20vw;
     grid-template-rows: 16vh;
     width: 100%;
@@ -8,7 +9,13 @@
     border-radius: 1vw;
     margin: 0%;
     padding: 0%;
+    transform: translateY(0px);
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
 }
+
+
+
 
 .logobox {
     grid-column: 1;

@@ -1,12 +1,34 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styles from "./headercss.module.css"
 import { Link } from 'react-router-dom';
 import Logo from "../../assets/header1logo.jpg"
 import Background from "../../assets/header1background.jpg"
-
 const Header = () => {
+    
+    const [scrollPosition, setScrollPosition] = useState(0)
+    //const [hidden, setHidden] = useState(false)
+    const header = useRef(0)
+
+    const handleScroll = () => {
+      
+        if (window.scrollY > scrollPosition) {
+            header.current.style.transform = 'translateY(-200px)'
+            
+        } else {
+            header.current.style.transform = 'translateY(0px)'
+            
+        }
+        setScrollPosition(window.scrollY);
+
+    }
+
+    useEffect(() => {
+        document.addEventListener('scroll',handleScroll)
+
+        return () => {document.removeEventListener('scroll', handleScroll)} 
+    }, [scrollPosition])
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id='header' ref={header}>
 
             <div className={styles.logobox}>
                 
